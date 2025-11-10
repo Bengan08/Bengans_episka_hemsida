@@ -12,7 +12,7 @@
     <!--Under denna kommer vi lägga till fler element-->
     <p id=photolink>
     <a href="/photoapp">Photo App</a>
-    <p>
+    </p>
     <p id="inspo">
     "The only way to learn a new programming language is by writing programs in it." - <strong>Dennis Ritchie</strong>, creator of the C programming language.
     </p>
