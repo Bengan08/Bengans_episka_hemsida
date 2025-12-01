@@ -85,6 +85,7 @@ main{
     flex-direction:column;
     justify-content:space-evenly;
     align-items:center;
+    padding: 5%;
 }
         
 </style>

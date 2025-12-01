@@ -8,6 +8,7 @@ import { base } from '$app/paths';
 	<a href="{base}/photoapp">Photo App</a> 
 	<a href="{base}/register">Register</a> 
 	<a href="{base}/login">Login</a>
+	<a href="{base}/shoppinglist">Shoppinglist</a>
 </nav>
 <svelte:head>
 	<link rel="icon" href={favicon} />
