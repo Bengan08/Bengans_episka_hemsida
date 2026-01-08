@@ -27,13 +27,28 @@ let cards = $state([
         { image: "https://e1.365dm.com/f1/drivers/256x256/h_full_1548.png", flipped: false, matched: false },
     ].sort(() => Math.random()- 0.5));
 
-let bluepoints = $state(0)
-let redpoints = $state(0)
-let blueturn = $state(true);
-let flippedCount = 0
-let flippedCards = []
+var bluepoints = $state(0)
+var redpoints = $state(0)
+var blueturn = $state(true);
+var flippedCount = 0
+var flippedCards = []
 
+    function restart(){
+        cards.forEach(card => {
+            card.flipped = false
+            card.matched = false
+        });
+        cards.sort(() => Math.random()- 0.5);
+        bluepoints = 0
+        redpoints = 0
+        flippedCards = []
+        flippedCount = 0
+}
 
+function handelboth(card){
+    flip(card)
+    gamecheck
+}
 
 
     function flip(card) {
@@ -74,10 +89,22 @@ let flippedCards = []
             flippedCards = []
         }
     }
-function restart() {
-    cards.flipped = false
-    flippedCards = []
+
+function gamecheck(){
+if (bluepoints+redpoints == 12){
+    if (bluepoints>redpoints){
+        alert('Blue won')
+    }
+    else if (bluepoints<redpoints){
+        alert('Red won')
+    }
+    else{
+    alert('Game tied')
+    }
 }
+else{return}
+}
+
 </script>
 
 <h1>
@@ -85,15 +112,20 @@ function restart() {
 </h1>
 <main>
     {#each cards as card}
-        <button class="card" class:flipped= { card.flipped } on:click={() => flip(card)} >
+        <button class="card" class:flipped= { card.flipped } on:click={() => handelboth(card) }  >
             <img class="front" src={card.image}>
             <img class="back" src="https://city-png.b-cdn.net/preview/preview_public/uploads/preview/formula-1-official-white-logo-hd-transparent-background-701751712229658jhzn4h9awp.png">
         </button>
     {/each}
 
 
+
 </main>
-    
+<div class = 'container1'>
+<button class=redo on:click={() => restart()}>
+        Restart
+    </button>
+    </div>
 <aside class="blue">
     <p>
         {bluepoints}
@@ -113,7 +145,7 @@ function restart() {
 <style>
     main{
         display: grid;
-        grid-template: repeat(8,100px) / repeat(6,100px);
+        grid-template: repeat(4,100px) / repeat(6,100px);
         justify-content: center;
         gap: 5px;
         
@@ -134,6 +166,30 @@ function restart() {
 
 
 
+}
+.back:hover{
+    transform: scale(1.1);
+}
+.back::highlight{
+    transform: scale(0.9);
+}
+
+
+.container1{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.redo{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    align-items: center;
+
+
+    
 }
 
 
