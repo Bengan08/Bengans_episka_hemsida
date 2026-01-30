@@ -11,6 +11,8 @@ import { base } from '$app/paths';
 	<a href="{base}/login">Login</a>
 	<a href="{base}/shoppinglist">Shoppinglist</a>
 	<a href="{base}/memory">Memory</a>
+	<a href="{base}/chat">Chat</a>
+	<a href="{base}/search">Search</a>
 </nav>
 <svelte:head>
 	<link rel="icon" href={favicon} />
@@ -25,6 +27,12 @@ import { base } from '$app/paths';
   padding: 0%;
   height: 100vh;
   width: 100vw;
+  
 }    
+:global(nav){
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	padding-left: 5px;
+	padding-bottom: 10px;
+}
 
 </style>

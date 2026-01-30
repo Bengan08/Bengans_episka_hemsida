@@ -1,6 +1,6 @@
 <script>
 let cards = $state([
-        { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/4665.png&w=350&h=254", flipped: false, matched: false },
+        { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/4665.png&w=350&h=254", flipped: false, matched: false},
         { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/5498.png", flipped: false, matched: false },
         { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/868.png", flipped: false, matched: false },
         { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/864.png", flipped: false, matched: false },
@@ -25,7 +25,7 @@ let cards = $state([
         { image: "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/5592.png", flipped: false, matched: false },
         { image: "https://cdn.racingnews365.com/_570x570_crop_center-center_none/carsai01.png?v=1741599360", flipped: false, matched: false },
         { image: "https://e1.365dm.com/f1/drivers/256x256/h_full_1548.png", flipped: false, matched: false },
-    ].sort(() => Math.random()- 0.5));
+    ].sort(() => Math.random()- 20));
 
 var bluepoints = $state(0)
 var redpoints = $state(0)
@@ -113,8 +113,8 @@ else{return}
 <main>
     {#each cards as card}
         <button class="card" class:flipped= { card.flipped } on:click={() => handelboth(card) }  >
-            <img class="front" src={card.image}>
-            <img class="back" src="https://city-png.b-cdn.net/preview/preview_public/uploads/preview/formula-1-official-white-logo-hd-transparent-background-701751712229658jhzn4h9awp.png">
+            <img class="front" src={card.image} alt='F1 förare' >
+            <img class="back" src="https://city-png.b-cdn.net/preview/preview_public/uploads/preview/formula-1-official-white-logo-hd-transparent-background-701751712229658jhzn4h9awp.png" alt='F1 logga'>
         </button>
     {/each}
 

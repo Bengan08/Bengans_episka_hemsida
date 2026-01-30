@@ -1,7 +1,7 @@
 <script>
     
 let image = "https://picsum.photos/id/70/367/267"
-let photo = "https://picsum.photos/id/88/367/267"
+let photo = "isak_skido.jpg"
 let picture = "https://picsum.photos/id/93/367/267"
 </script>
 
