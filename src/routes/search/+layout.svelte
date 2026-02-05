@@ -3,6 +3,7 @@
   // Importera goto-funktionen för att navigera mellan sidor
 import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+import { base } from '$app/paths';
 
 let pokemons = $state([])
 
@@ -25,7 +26,7 @@ function handleSubmit(e) {
     const search = formData.get('search');
     
     // Navigera till den dynamiska routen /search/[pokemon]
-    goto('/search/' + search);
+    goto(base+'/search/' + search);
     }
     
     let data = 5
