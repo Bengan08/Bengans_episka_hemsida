@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/CZwytzPw.js";import{au as t,aw as e}from"../chunks/CwDFa_nX.js";var r=t('<main class="svelte-e12qt1"><footer class="svelte-e12qt1"></footer></main>');function p(o){var a=r();e(o,a)}export{p as component};

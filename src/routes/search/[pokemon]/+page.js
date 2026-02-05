@@ -21,7 +21,12 @@ export async function load({ params, fetch }) {
     }
     
     let data = await response.json(); // parses JSON response into native JavaScript objects
-    console.log(data);
+    //console.log(data);
+    let temp = localStorage.getItem("pokemons") ?? "[]"
+    temp = JSON.parse(temp)
+    let name = data.name
+    temp.push({name})
+    localStorage.setItem("pokemons",JSON.stringify(temp))
     return { params, response: data }; 
 
 }

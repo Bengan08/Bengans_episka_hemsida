@@ -2,6 +2,15 @@
 
   // Importera goto-funktionen för att navigera mellan sidor
 import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+let pokemons = $state([])
+
+
+onMount(()=>{
+    let pokemon_str = localStorage.getItem("pokemons") ?? "[]"
+    pokemons = JSON.parse(pokemon_str)
+})
 
   // Funktion som hanterar formulärets submit-händelse
 function handleSubmit(e) {
@@ -18,16 +27,10 @@ function handleSubmit(e) {
     // Navigera till den dynamiska routen /search/[pokemon]
     goto('/search/' + search);
     }
-    document.addEventListener('DOMContentLoaded', ()=> {
-            field.preventDefault();
-            let field = document.getElementById('field');
-        field.addEventListener('input',()=>{
-            sessionStorage.setItem('fieldvalue', field)
-        });
-    })
-
+    
     let data = 5
      //sessionStorage.getItem('fieldvalue')
+   
 
 </script>
 <main>
@@ -43,10 +46,9 @@ function handleSubmit(e) {
     </slot>
 </main>
 <footer>
-    <script>
-        document.write(data)
-    </script>
-    
+    {#each pokemons.slice(-5).reverse() as pokemon}
+        { pokemon.name }&nbsp;
+    {/each}
 </footer>
 
 <div class="backdrop">
@@ -93,6 +95,7 @@ function handleSubmit(e) {
     footer{
         width: 100%;
         position: fixed;
+        bottom: 0px;
         background-color: antiquewhite;
     }
 </style>
